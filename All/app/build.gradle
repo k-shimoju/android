@@ -1,0 +1,85 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.eiga.app.android.all"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "com.android.support:appcompat-v7:$SUPPORT_PACKAGE_VERSION"
+    implementation "com.android.support:design:$SUPPORT_PACKAGE_VERSION"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation "com.android.support:support-vector-drawable:$SUPPORT_PACKAGE_VERSION"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+
+    implementation "com.android.support:support-fragment:$SUPPORT_PACKAGE_VERSION"
+    implementation "com.android.support:recyclerview-v7:$SUPPORT_PACKAGE_VERSION"
+
+    implementation "android.arch.navigation:navigation-fragment:$NAVIGATON_VERSION"
+    implementation "android.arch.navigation:navigation-ui:$NAVIGATON_VERSION"
+    implementation "android.arch.navigation:navigation-fragment-ktx:$NAVIGATON_VERSION"
+    implementation "android.arch.navigation:navigation-ui-ktx:$NAVIGATON_VERSION"
+
+    implementation "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION"
+    implementation "com.squareup.retrofit2:converter-moshi:$RETROFIT_VERSION"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$RETROFIT_VERSION"
+
+    implementation "com.squareup.okhttp3:logging-interceptor:$OKHTTP_VERSION"
+
+    implementation "com.google.dagger:dagger:$DAGGER_VERSION"
+    implementation "com.google.dagger:dagger-android:$DAGGER_VERSION"
+    implementation "com.google.dagger:dagger-android-support:$DAGGER_VERSION"
+    kapt "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
+    kapt "com.google.dagger:dagger-android-processor:$DAGGER_VERSION"
+    annotationProcessor "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$DAGGER_VERSION"
+
+    implementation "com.squareup.moshi:moshi:$MOSHI_VERSION"
+    implementation "com.squareup.moshi:moshi-kotlin:$MOSHI_VERSION"
+
+    implementation "io.reactivex.rxjava2:rxandroid:$RX_ANDROID_VERSION"
+    implementation "io.reactivex.rxjava2:rxjava:$RX_ANDROID_VERSION"
+
+    implementation "android.arch.lifecycle:runtime:$ARCH_VERSION"
+    implementation "android.arch.lifecycle:extensions:$ARCH_VERSION"
+    implementation "android.arch.lifecycle:reactivestreams:$ARCH_VERSION"
+    kapt "android.arch.lifecycle:compiler:$ARCH_VERSION"
+
+    implementation "com.squareup.picasso:picasso:$PICASSO_VERSION"
+
+    implementation "android.arch.persistence.room:runtime:$ROOM_VERSION"
+    annotationProcessor "android.arch.persistence.room:compiler:$ROOM_VERSION"
+    kapt "android.arch.persistence.room:compiler:$ROOM_VERSION"
+}
+
+apply plugin: 'kotlin-kapt'

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_navigation"
+    app:startDestination="@id/reposFragment">
+    <fragment
+        android:id="@+id/reposFragment"
+        android:name="com.all.app.android.all.ui.main.repos.ReposFragment"
+        android:label="ReposFragment" />
+    <fragment
+        android:id="@+id/reposDbFragment"
+        android:name="com.all.app.android.all.ui.main.repos_db.ReposDbFragment"
+        android:label="ReposDbFragment" />
+    <fragment
+        android:id="@+id/naviFragment"
+        android:name="com.all.app.android.all.ui.main.navi.NaviFragment"
+        android:label="NaviFragment" >
+        <action
+            android:id="@+id/action_naviFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.all.app.android.all.ui.main.navi.result.ResultFragment"
+        android:label="ResultFragment" />
+</navigation>
